@@ -1,0 +1,314 @@
+[
+  {
+    "id": 1,
+    "name": "BMW 3 Series",
+    "brand": "BMW",
+    "type": "sedan",
+    "price": 85,
+    "image": "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=500&h=300&fit=crop",
+    "description": "Experience luxury and performance with the BMW 3 Series. This premium sedan offers exceptional driving dynamics, advanced technology, and superior comfort for both business and leisure travel.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.8,
+    "reviewCount": 127,
+    "features": ["ac", "gps", "bluetooth", "usb", "cruise-control", "sunroof"],
+    "available": true,
+    "featured": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1559416523-140ddc3d238c?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Mercedes-Benz C-Class",
+    "brand": "Mercedes-Benz",
+    "type": "luxury",
+    "price": 95,
+    "image": "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=500&h=300&fit=crop",
+    "description": "Indulge in luxury with the Mercedes-Benz C-Class. This sophisticated sedan combines elegance, cutting-edge technology, and unmatched comfort for an unforgettable driving experience.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.9,
+    "reviewCount": 89,
+    "features": ["ac", "gps", "bluetooth", "usb", "leather-seats", "premium-audio", "sunroof"],
+    "available": true,
+    "featured": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Audi A4",
+    "brand": "Audi",
+    "type": "sedan",
+    "price": 80,
+    "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500&h=300&fit=crop",
+    "description": "The Audi A4 delivers a perfect blend of sportiness and sophistication. With its refined interior, advanced technology, and dynamic performance, it's ideal for both city driving and highway cruising.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.7,
+    "reviewCount": 156,
+    "features": ["ac", "gps", "bluetooth", "usb", "heated-seats", "sport-mode"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1614026480479-44b21d6f76b4?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Honda CR-V",
+    "brand": "Honda",
+    "type": "suv",
+    "price": 65,
+    "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=300&fit=crop",
+    "description": "The Honda CR-V is a versatile and reliable SUV perfect for family adventures. With spacious interior, excellent fuel economy, and advanced safety features, it's ideal for any journey.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.6,
+    "reviewCount": 203,
+    "features": ["ac", "gps", "bluetooth", "usb", "backup-camera", "all-wheel-drive"],
+    "available": true,
+    "featured": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1606016159991-cdf4aa18d93c?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Toyota Camry",
+    "brand": "Toyota",
+    "type": "sedan",
+    "price": 60,
+    "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=500&h=300&fit=crop",
+    "description": "The Toyota Camry offers exceptional reliability and fuel efficiency. This midsize sedan features a comfortable interior, smooth ride quality, and advanced safety technology.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.5,
+    "reviewCount": 234,
+    "features": ["ac", "gps", "bluetooth", "usb", "lane-assist", "collision-warning"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Porsche 911",
+    "brand": "Porsche",
+    "type": "sports",
+    "price": 250,
+    "image": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500&h=300&fit=crop",
+    "description": "Experience pure driving excitement with the iconic Porsche 911. This legendary sports car delivers breathtaking performance, precision handling, and timeless design.",
+    "seats": 2,
+    "transmission": "manual",
+    "fuelType": "gasoline",
+    "rating": 4.9,
+    "reviewCount": 67,
+    "features": ["ac", "gps", "bluetooth", "sport-exhaust", "performance-seats", "carbon-fiber"],
+    "available": true,
+    "featured": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Tesla Model 3",
+    "brand": "Tesla",
+    "type": "sedan",
+    "price": 90,
+    "image": "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=500&h=300&fit=crop",
+    "description": "Experience the future of driving with the Tesla Model 3. This all-electric sedan offers cutting-edge technology, impressive range, and zero emissions for the environmentally conscious driver.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "electric",
+    "rating": 4.8,
+    "reviewCount": 178,
+    "features": ["ac", "gps", "bluetooth", "autopilot", "supercharging", "premium-audio", "glass-roof"],
+    "available": true,
+    "featured": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1560958089-b8a1929cea89?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Jeep Wrangler",
+    "brand": "Jeep",
+    "type": "suv",
+    "price": 75,
+    "image": "https://images.unsplash.com/photo-1606611013714-18b6a8bc5d99?w=500&h=300&fit=crop",
+    "description": "Adventure awaits with the rugged Jeep Wrangler. Built for off-road exploration, this iconic SUV combines legendary capability with modern comfort and technology.",
+    "seats": 4,
+    "transmission": "manual",
+    "fuelType": "gasoline",
+    "rating": 4.4,
+    "reviewCount": 145,
+    "features": ["ac", "gps", "bluetooth", "4wd", "removable-doors", "off-road-package"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1606611013714-18b6a8bc5d99?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Ford Mustang",
+    "brand": "Ford",
+    "type": "sports",
+    "price": 120,
+    "image": "https://images.unsplash.com/photo-1547744152-14d985cb937e?w=500&h=300&fit=crop",
+    "description": "Feel the power and heritage of the Ford Mustang. This American icon delivers thrilling performance, aggressive styling, and an unmistakable exhaust note that turns heads everywhere.",
+    "seats": 4,
+    "transmission": "manual",
+    "fuelType": "gasoline",
+    "rating": 4.7,
+    "reviewCount": 198,
+    "features": ["ac", "gps", "bluetooth", "performance-exhaust", "sport-seats", "launch-control"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1547744152-14d985cb937e?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1584345604476-8ec5e12e42dd?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Volkswagen Golf",
+    "brand": "Volkswagen",
+    "type": "hatchback",
+    "price": 55,
+    "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500&h=300&fit=crop",
+    "description": "The Volkswagen Golf combines European sophistication with practical versatility. This compact hatchback offers excellent build quality, efficient performance, and timeless design.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.3,
+    "reviewCount": 167,
+    "features": ["ac", "gps", "bluetooth", "usb", "parking-sensors", "dual-zone-climate"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Range Rover Evoque",
+    "brand": "Land Rover",
+    "type": "luxury",
+    "price": 150,
+    "image": "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=500&h=300&fit=crop",
+    "description": "The Range Rover Evoque redefines luxury SUV design. With its distinctive coupe-like silhouette, premium interior, and capable off-road performance, it's perfect for urban adventures.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.6,
+    "reviewCount": 92,
+    "features": ["ac", "gps", "bluetooth", "leather-seats", "panoramic-roof", "terrain-response", "premium-audio"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Nissan Altima",
+    "brand": "Nissan",
+    "type": "sedan",
+    "price": 58,
+    "image": "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=500&h=300&fit=crop",
+    "description": "The Nissan Altima offers modern style and advanced technology at an exceptional value. This midsize sedan features a spacious interior, smooth CVT transmission, and impressive fuel economy.",
+    "seats": 5,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.2,
+    "reviewCount": 189,
+    "features": ["ac", "gps", "bluetooth", "usb", "remote-start", "intelligent-cruise"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Chevrolet Tahoe",
+    "brand": "Chevrolet",
+    "type": "suv",
+    "price": 110,
+    "image": "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=500&h=300&fit=crop",
+    "description": "The Chevrolet Tahoe is a full-size SUV built for families and adventure. With three rows of seating, impressive towing capacity, and advanced safety features, it's perfect for large groups.",
+    "seats": 8,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 4.4,
+    "reviewCount": 134,
+    "features": ["ac", "gps", "bluetooth", "third-row", "towing-package", "4wd", "captain-chairs"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Mini Cooper",
+    "brand": "Mini",
+    "type": "hatchback",
+    "price": 70,
+    "image": "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=500&h=300&fit=crop",
+    "description": "The Mini Cooper delivers big personality in a small package. This iconic hatchback combines retro charm with modern performance, making it perfect for city driving and weekend adventures.",
+    "seats": 4,
+    "transmission": "manual",
+    "fuelType": "gasoline",
+    "rating": 4.5,
+    "reviewCount": 176,
+    "features": ["ac", "gps", "bluetooth", "sport-mode", "panoramic-sunroof", "premium-audio"],
+    "available": true,
+    "featured": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&h=600&fit=crop"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Lamborghini Huracán",
+    "brand": "Lamborghini",
+    "type": "sports",
+    "price": 500,
+    "image": "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=500&h=300&fit=crop",
+    "description": "Experience automotive excellence with the Lamborghini Huracán. This supercar delivers breathtaking performance, stunning design, and an unforgettable driving experience that defines luxury sports cars.",
+    "seats": 2,
+    "transmission": "automatic",
+    "fuelType": "gasoline",
+    "rating": 5.0,
+    "reviewCount": 23,
+    "features": ["ac", "gps", "bluetooth", "carbon-fiber", "performance-exhaust", "launch-control", "adaptive-suspension"],
+    "available": true,
+    "featured": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?w=800&h=600&fit=crop",
+      "https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?w=800&h=600&fit=crop"
+    ]
+  }
+]

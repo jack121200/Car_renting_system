@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard - Vrooom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">Vrooom</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listing.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="user-dashboard.html" class="active">Dashboard</a></li>
+                <li><button id="logout-btn" class="btn-primary">Logout</button></li>
+                <li><button id="theme-toggle" class="theme-btn">
+                    <i data-feather="sun"></i>
+                </button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="dashboard-page">
+        <div class="container">
+            <div class="dashboard-header">
+                <div class="user-welcome">
+                    <h1>Welcome back, <span id="user-name">User</span>!</h1>
+                    <p>Manage your bookings and profile settings</p>
+                </div>
+                <div class="quick-actions">
+                    <a href="listing.html" class="action-btn ripple-btn">
+                        <i data-feather="plus"></i>
+                        Book New Car
+                    </a>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <!-- Dashboard Sidebar -->
+                <aside class="dashboard-sidebar glass">
+                    <nav class="dashboard-nav">
+                        <ul>
+                            <li>
+                                <button class="nav-btn active" data-tab="bookings">
+                                    <i data-feather="calendar"></i>
+                                    My Bookings
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="profile">
+                                    <i data-feather="user"></i>
+                                    Profile Settings
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="preferences">
+                                    <i data-feather="settings"></i>
+                                    Preferences
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="help">
+                                    <i data-feather="help-circle"></i>
+                                    Help & Support
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Dashboard Main Content -->
+                <div class="dashboard-main">
+                    <!-- Bookings Tab -->
+                    <div id="bookings-tab" class="dashboard-tab active">
+                        <div class="tab-header">
+                            <h2>My Bookings</h2>
+                            <div class="booking-filters">
+                                <select id="booking-status-filter">
+                                    <option value="all">All Bookings</option>
+                                    <option value="active">Active</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="booking-stats">
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="calendar-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-bookings">0</h3>
+                                    <p>Total Bookings</p>
+                                </div>
+                            </div>
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="truck"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="active-bookings">0</h3>
+                                    <p>Active Bookings</p>
+                                </div>
+                            </div>
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="dollar-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-spent">$0</h3>
+                                    <p>Total Spent</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bookings-list" id="bookings-list">
+                            <!-- Bookings will be loaded here -->
+                        </div>
+
+                        <div class="empty-state" id="empty-bookings" style="display: none;">
+                            <i data-feather="calendar"></i>
+                            <h3>No bookings yet</h3>
+                            <p>Start exploring our amazing car collection</p>
+                            <a href="listing.html" class="btn-primary">Browse Cars</a>
+                        </div>
+                    </div>
+
+                    <!-- Profile Tab -->
+                    <div id="profile-tab" class="dashboard-tab">
+                        <div class="tab-header">
+                            <h2>Profile Settings</h2>
+                        </div>
+
+                        <div class="profile-content">
+                            <div class="profile-card glass">
+                                <div class="profile-avatar">
+                                    <div class="avatar-placeholder">
+                                        <i data-feather="user"></i>
+                                    </div>
+                                    <button class="avatar-upload">
+                                        <i data-feather="camera"></i>
+                                    </button>
+                                </div>
+
+                                <form class="profile-form" id="profile-form">
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="profile-first-name">First Name</label>
+                                            <input type="text" id="profile-first-name" name="firstName">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="profile-last-name">Last Name</label>
+                                            <input type="text" id="profile-last-name" name="lastName">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="profile-email">Email Address</label>
+                                        <input type="email" id="profile-email" name="email" readonly>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="profile-phone">Phone Number</label>
+                                        <input type="tel" id="profile-phone" name="phone">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="profile-address">Address</label>
+                                        <textarea id="profile-address" name="address" rows="3"></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn-primary ripple-btn">
+                                        Update Profile
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Preferences Tab -->
+                    <div id="preferences-tab" class="dashboard-tab">
+                        <div class="tab-header">
+                            <h2>Preferences</h2>
+                        </div>
+
+                        <div class="preferences-content">
+                            <div class="preference-section glass">
+                                <h3>Appearance</h3>
+                                <div class="preference-item">
+                                    <div class="preference-info">
+                                        <h4>Theme</h4>
+                                        <p>Choose your preferred color scheme</p>
+                                    </div>
+                                    <div class="theme-selector">
+                                        <button class="theme-option active" data-theme="light">
+                                            <i data-feather="sun"></i>
+                                            Light
+                                        </button>
+                                        <button class="theme-option" data-theme="dark">
+                                            <i data-feather="moon"></i>
+                                            Dark
+                                        </button>
+                                        <button class="theme-option" data-theme="auto">
+                                            <i data-feather="monitor"></i>
+                                            Auto
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="preference-section glass">
+                                <h3>Notifications</h3>
+                                <div class="preference-item">
+                                    <div class="preference-info">
+                                        <h4>Email Notifications</h4>
+                                        <p>Receive booking confirmations and updates via email</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="email-notifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="preference-item">
+                                    <div class="preference-info">
+                                        <h4>SMS Notifications</h4>
+                                        <p>Get important updates via text message</p>
+                                    </div>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="sms-notifications">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="preference-section glass">
+                                <h3>Account</h3>
+                                <div class="preference-item">
+                                    <div class="preference-info">
+                                        <h4>Change Password</h4>
+                                        <p>Update your account password</p>
+                                    </div>
+                                    <button class="btn-secondary" id="change-password-btn">
+                                        Change Password
+                                    </button>
+                                </div>
+                                <div class="preference-item">
+                                    <div class="preference-info">
+                                        <h4>Delete Account</h4>
+                                        <p>Permanently delete your account and all data</p>
+                                    </div>
+                                    <button class="btn-danger" id="delete-account-btn">
+                                        Delete Account
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Help Tab -->
+                    <div id="help-tab" class="dashboard-tab">
+                        <div class="tab-header">
+                            <h2>Help & Support</h2>
+                        </div>
+
+                        <div class="help-content">
+                            <div class="help-section glass">
+                                <h3>Frequently Asked Questions</h3>
+                                <div class="faq-list">
+                                    <div class="faq-item">
+                                        <button class="faq-question">
+                                            <span>How do I modify or cancel my booking?</span>
+                                            <i data-feather="chevron-down"></i>
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>You can modify or cancel your booking from the "My Bookings" section. Click on the booking you want to change and select the appropriate option.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <button class="faq-question">
+                                            <span>What documents do I need to rent a car?</span>
+                                            <i data-feather="chevron-down"></i>
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>You'll need a valid driver's license, credit card, and government-issued ID. International customers may need an International Driving Permit.</p>
+                                        </div>
+                                    </div>
+                                    <div class="faq-item">
+                                        <button class="faq-question">
+                                            <span>Are there any age restrictions?</span>
+                                            <i data-feather="chevron-down"></i>
+                                        </button>
+                                        <div class="faq-answer">
+                                            <p>Drivers must be at least 21 years old. Some premium vehicles may require drivers to be 25 or older.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="help-section glass">
+                                <h3>Contact Support</h3>
+                                <div class="contact-options">
+                                    <div class="contact-option">
+                                        <div class="contact-icon">
+                                            <i data-feather="phone"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <h4>Phone Support</h4>
+                                            <p>+1 (555) 123-4567</p>
+                                            <span>Available 24/7</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-option">
+                                        <div class="contact-icon">
+                                            <i data-feather="mail"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <h4>Email Support</h4>
+                                            <p>support@vrooom.com</p>
+                                            <span>Response within 24 hours</span>
+                                        </div>
+                                    </div>
+                                    <div class="contact-option">
+                                        <div class="contact-icon">
+                                            <i data-feather="message-circle"></i>
+                                        </div>
+                                        <div class="contact-info">
+                                            <h4>Live Chat</h4>
+                                            <p>Chat with our support team</p>
+                                            <button class="btn-primary">Start Chat</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Cancel Booking Modal -->
+    <div id="cancel-booking-modal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3>Cancel Booking</h3>
+                <button class="close-modal" id="close-cancel-modal">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to cancel this booking?</p>
+                <div class="modal-actions">
+                    <button class="btn-secondary" id="cancel-booking-no">No, Keep Booking</button>
+                    <button class="btn-danger" id="cancel-booking-yes">Yes, Cancel Booking</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vrooom</h3>
+                    <p>Premium car rental service with style and comfort.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vrooom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="module" src="js/main.js"></script>
+    <script>
+        // User dashboard specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user is logged in
+            const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+            if (!currentUser) {
+                window.location.href = 'login.html';
+                return;
+            }
+
+            // Initialize dashboard
+            initializeDashboard();
+            loadUserBookings();
+            loadUserProfile();
+            
+            // Dashboard navigation
+            const navButtons = document.querySelectorAll('.nav-btn');
+            const tabContents = document.querySelectorAll('.dashboard-tab');
+            
+            navButtons.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.dataset.tab;
+                    
+                    // Update active states
+                    navButtons.forEach(b => b.classList.remove('active'));
+                    tabContents.forEach(t => t.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    document.getElementById(tabId + '-tab').classList.add('active');
+                });
+            });
+
+            // Logout functionality
+            document.getElementById('logout-btn').addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                window.location.href = 'index.html';
+            });
+        });
+
+        function initializeDashboard() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            document.getElementById('user-name').textContent = currentUser.firstName || 'User';
+        }
+
+        function loadUserBookings() {
+            const bookings = JSON.parse(localStorage.getItem('userBookings') || '[]');
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            const userBookings = bookings.filter(booking => booking.userId === currentUser.email);
+            
+            // Update stats
+            document.getElementById('total-bookings').textContent = userBookings.length;
+            document.getElementById('active-bookings').textContent = userBookings.filter(b => b.status === 'active').length;
+            document.getElementById('total-spent').textContent = '$' + userBookings.reduce((sum, b) => sum + b.totalPrice, 0);
+            
+            const bookingsList = document.getElementById('bookings-list');
+            const emptyState = document.getElementById('empty-bookings');
+            
+            if (userBookings.length === 0) {
+                bookingsList.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+            
+            bookingsList.innerHTML = userBookings.map(booking => `
+                <div class="booking-card glass" data-booking-id="${booking.id}">
+                    <div class="booking-car-info">
+                        <img src="${booking.car.image}" alt="${booking.car.name}" class="booking-car-image">
+                        <div class="booking-details">
+                            <h3>${booking.car.name}</h3>
+                            <p class="booking-dates">${booking.pickupDate} - ${booking.returnDate}</p>
+                            <p class="booking-location">${booking.pickupLocation}</p>
+                        </div>
+                    </div>
+                    <div class="booking-status">
+                        <span class="status-badge ${booking.status}">${booking.status}</span>
+                        <div class="booking-price">$${booking.totalPrice}</div>
+                    </div>
+                    <div class="booking-actions">
+                        ${booking.status === 'active' ? `
+                            <button class="btn-danger cancel-booking-btn" data-booking-id="${booking.id}">
+                                Cancel Booking
+                            </button>
+                        ` : ''}
+                        <button class="btn-secondary view-booking-btn" data-booking-id="${booking.id}">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+            
+            // Add event listeners for booking actions
+            document.querySelectorAll('.cancel-booking-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const bookingId = e.target.dataset.bookingId;
+                    showCancelBookingModal(bookingId);
+                });
+            });
+        }
+
+        function loadUserProfile() {
+            const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+            document.getElementById('profile-first-name').value = currentUser.firstName || '';
+            document.getElementById('profile-last-name').value = currentUser.lastName || '';
+            document.getElementById('profile-email').value = currentUser.email || '';
+            document.getElementById('profile-phone').value = currentUser.phone || '';
+            document.getElementById('profile-address').value = currentUser.address || '';
+        }
+
+        function showCancelBookingModal(bookingId) {
+            const modal = document.getElementById('cancel-booking-modal');
+            modal.style.display = 'block';
+            
+            document.getElementById('cancel-booking-yes').onclick = () => {
+                cancelBooking(bookingId);
+                modal.style.display = 'none';
+            };
+            
+            document.getElementById('cancel-booking-no').onclick = () => {
+                modal.style.display = 'none';
+            };
+        }
+
+        function cancelBooking(bookingId) {
+            const bookings = JSON.parse(localStorage.getItem('userBookings') || '[]');
+            const updatedBookings = bookings.map(booking => 
+                booking.id === bookingId ? {...booking, status: 'cancelled'} : booking
+            );
+            localStorage.setItem('userBookings', JSON.stringify(updatedBookings));
+            loadUserBookings();
+            showToast('Booking cancelled successfully', 'success');
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast show ${type}`;
+            setTimeout(() => {
+                toast.className = 'toast';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

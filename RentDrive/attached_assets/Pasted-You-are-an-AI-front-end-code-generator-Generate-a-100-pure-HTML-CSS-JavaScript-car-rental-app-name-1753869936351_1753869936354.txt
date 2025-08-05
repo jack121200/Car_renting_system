@@ -1,0 +1,73 @@
+You are an AI front‑end code generator. Generate a 100% pure HTML/CSS/JavaScript car‑rental app named “Vrooom – Rent a Car in Style” with the following:
+
+1. Tech Stack (strictly):
+   • HTML5 (semantic tags)  
+   • CSS3 (Flexbox, Grid, CSS Variables, @keyframes animations, glassmorphism, parallax scroll)  
+   • Vanilla JavaScript ES6+ (modules, IntersectionObserver, Fetch API for static JSON, localStorage)  
+   • No frameworks, no preprocessors, no build tools—just plain files.
+
+2. Folder Structure:
+   • index.html (landing page)  
+   • listing.html (cars listing)  
+   • details.html (car details)  
+   • signup.html, login.html (with OTP verification)  
+   • user-dashboard.html (user bookings & profile)  
+   • admin-dashboard.html (car management & bookings overview)  
+   • contact.html  
+   • /css/style.css  
+   • /js/main.js, /js/listing.js, /js/details.js, /js/auth.js, /js/admin.js  
+   • /data/cars.json (static car data)
+
+3. Pages & Features:
+   a. **Landing Page**  
+      – Hero banner with parallax + floating car animation  
+      – Search bar (“Pick location | Date | Time”) with pure‑JS date/time picker  
+      – Featured cars grid: glassmorphism cards, CSS hover‑zoom, slide‑in on scroll  
+      – “Why Choose Us” icons with fade‑in animations  
+      – Testimonials slider in pure JS  
+
+   b. **Cars Listing Page**  
+      – Sidebar filters: type dropdown, price slider, rating stars  
+      – Responsive grid of cards: image, specs, price, “Rent Now” opens booking modal  
+
+   c. **Car Details Page**  
+      – Image gallery carousel & CSS zoom on hover  
+      – Description, specs table styled with CSS Grid  
+      – Reviews loaded from JSON + star rating  
+      – “Book Now” triggers booking summary modal  
+
+   d. **Auth Pages (signup.html, login.html)**  
+      – Signup/Login forms with email & phone fields  
+      – OTP verification: generate 6‑digit OTP in JS, display via console/alert, input field to verify before access  
+      – Store user info in localStorage  
+
+   e. **Booking Summary Modal**  
+      – Animated modal (fade+scale) showing selected car, dates, price  
+      – Simulated payment workflow: dummy gateway in JS with “Pay” button → random success/fail → display receipt or error  
+      – Ripple effect on “Confirm Booking”  
+
+   f. **User Dashboard (user-dashboard.html)**  
+      – Display booking history from localStorage  
+      – Option to cancel (simulate) bookings  
+      – Profile section to toggle light/dark theme  
+
+   g. **Admin Dashboard (admin-dashboard.html)**  
+      – CRUD interface for /data/cars.json: add/edit/delete cars using JS and update JSON file simulation  
+      – View all bookings stored in localStorage  
+      – Stats section with total bookings & revenue simulation  
+
+   h. **Contact Page & Footer**  
+      – Static Google Map embed  
+      – Feedback form with JS validation & toast notification  
+
+4. UI & Interactions:
+   • Parallax scroll on hero  
+   • @keyframes for slide‑in, floating car, ripple button  
+   • IntersectionObserver for scroll animations  
+   • Light/Dark theme toggle via CSS Variables + localStorage  
+
+5. README.md:
+   • “Just open any HTML in browser” setup  
+   • Folder & file overview  
+   • How to edit /data/cars.json  
+   • Theme & OTP instructions

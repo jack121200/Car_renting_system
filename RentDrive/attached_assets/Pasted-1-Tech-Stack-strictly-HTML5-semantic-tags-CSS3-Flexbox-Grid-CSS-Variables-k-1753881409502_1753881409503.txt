@@ -1,0 +1,109 @@
+1. Tech Stack (strictly):
+   • HTML5 (semantic tags)  
+   • CSS3 (Flexbox, Grid, CSS Variables, @keyframes animations, glassmorphism, parallax scroll, full‑screen background images)  
+   • Vanilla JavaScript ES6+ (modules, IntersectionObserver, Fetch API for static JSON, localStorage, modern JS patterns)  
+   • No frameworks, no preprocessors, no build tools—just plain files.
+
+2. Folder Structure:
+/
+├── index.html # Landing Page
+├── listing.html # Cars Listing
+├── details.html # Car Details
+├── signup.html # Signup + OTP
+├── login.html # Login + OTP
+├── user-dashboard.html # User Profile & Bookings
+├── admin-dashboard.html # Admin Car & Booking Management
+├── contact.html # Contact / Footer
+
+├── assets/
+│ ├── images/ # Hero banners, car photos, icons, background images
+│ └── fonts/ # Any custom fonts
+
+├── css/
+│ ├── global.css # Reset + common variables (colors, typography)
+│ ├── components.css # Buttons, cards, modals, form controls
+│ ├── landing.css # Landing page styles
+│ ├── listing.css # Listing page styles
+│ ├── details.css # Details page styles
+│ ├── auth.css # Signup/Login styles
+│ └── dashboard.css # Shared dashboard styles (override in admin-dashboard.css if needed)
+
+├── js/
+│ ├── main.js # App init, theme toggle, global listeners
+│ ├── auth.js # Signup/Login + OTP logic
+│ ├── booking.js # Booking modal + payment simulation
+│ ├── listing.js # Filter & listing logic
+│ ├── details.js # Gallery & details interactions
+│ ├── user-dashboard.js # User dashboard logic
+│ ├── admin-dashboard.js # Admin dashboard logic
+│ └── modules/ # Reusable helpers
+│ ├── domUtils.js # DOM query & event helpers
+│ ├── api.js # Fetch JSON, localStorage wrappers
+│ └── datePicker.js # Pure‑JS date/time picker
+
+├── data/
+│ └── cars.json # Static car data
+
+├── .gitignore
+└── README.md # Project overview & how to run
+
+sql
+Copy
+Edit
+
+3. Pages & Features:
+   a. **Landing Page**  
+      – **Ultra‑modern, jaw‑dropping UI**: full‑screen parallax hero with floating 3D car effect over a high‑resolution background image  
+      – Search bar (“Pick location | Date | Time”) with animated focus, micro‑interactions, and date/time picker in pure JS  
+      – Featured cars grid: neon glassmorphism cards with dynamic hover animations (scale, glow, shadow), slide‑up on scroll  
+      – “Why Choose Us” section with SVG icons animating on viewport enter  
+      – Testimonials slider with 3D flip carousel effect and autoplay  
+      – **Background images** on every section for immersive look  
+
+   b. **Cars Listing Page**  
+      – Sidebar filters: custom range sliders, star‑rating filter, collapsible filter panel with smooth transition over a subtle background image  
+      – Responsive masonry grid of car cards with layered hover animations (parallax card hover, button glow)  
+      – “Rent Now” button ripple and pulse effect on hover  
+
+   c. **Car Details Page**  
+      – Interactive image gallery: thumbnail carousel with smooth swipe, CSS zoom‑pan effect on hover against a light background texture  
+      – Specs table with alternating row animations and neon headers  
+      – Reviews section with animated star‑fill effect  
+      – Sticky, animated CTA “Book Now” button that pulses until clicked  
+
+   d. **Auth Pages (signup.html, login.html)**  
+      – Animated form cards with floating labels, input validation animations over a modern background image  
+      – OTP flow: generate 6‑digit OTP in JS, show timed countdown UI, input fields auto‑advance, verify before redirect  
+      – Store session in localStorage  
+
+   e. **Booking Summary Modal**  
+      – Full‑screen overlay modal with backdrop blur over page background, scale‑in animation  
+      – Simulated payment gateway UI: card input fields with animated placeholders, “Pay” button triggers loader animation → random success/fail → receipt screen with confetti animation on success  
+      – Ripple effect and micro‑interaction on confirm  
+
+   f. **User Dashboard (user-dashboard.html)**  
+      – Dashboard cards with live counters (total bookings, upcoming trips) using count‑up animation on top of a subtle background pattern  
+      – Booking history list with slide‑in on load, cancel button with undo toast  
+      – Profile section with avatar upload preview and theme toggle  
+
+   g. **Admin Dashboard (admin-dashboard.html)**  
+      – Interactive CRUD table: inline edit, row animations on add/delete, drag‑and‑drop reordering over a clean background  
+      – Booking overview chart: animated bars using pure CSS + JS  
+      – Revenue summary cards with flip‑card animation  
+
+   h. **Contact Page & Footer**  
+      – Embedded static Google Map styled with custom CSS overlays on a background image  
+      – Feedback form with animated textarea, live character count, success toast  
+
+4. UI & Interactions:
+   • Parallax scroll, layered 3D illusions, neon glow effects  
+   • @keyframes for slide‑in, floating car, ripple button, confetti burst  
+   • IntersectionObserver triggers for scroll animations  
+   • Light/Dark theme toggle with smooth color transition via CSS Variables + localStorage persistence  
+   • **UI quality so exceptional you would score it 100/100**—every animation and transition must feel buttery‑smooth at 60fps, with micro‑interactions that wow users  
+
+5. README.md:
+   • “Just open any HTML in browser” setup  
+   • Detailed folder & file overview  
+   • Instructions to edit /data/cars.json, configure OTP timing, and mock payment success rate  
+   • Theme toggle & demo instructions  

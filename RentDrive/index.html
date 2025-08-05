@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vrooom - Rent a Car in Style</title>
+    
+    <!-- Enhanced CSS Architecture -->
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/landing.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Vrooom</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listing.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-primary">Login</a></li>
+                <li><button id="theme-toggle" class="theme-btn">
+                    <i data-feather="sun"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Ultra-modern Hero Section with Full-screen Parallax -->
+        <section class="hero-section">
+            <!-- Floating 3D Car Effect -->
+            <div class="floating-car"></div>
+            
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Vrooom – Rent a Car in Style</h1>
+                    <p class="hero-subtitle">Experience luxury and comfort with our premium car rental service. Drive your dreams with unmatched quality and service.</p>
+                    
+                    <!-- Hero Search with Glassmorphism -->
+                    <div class="hero-search">
+                        <form class="search-form" id="hero-search-form">
+                            <div class="search-group">
+                                <label>Pick Location</label>
+                                <select name="location" required>
+                                    <option value="">Select location</option>
+                                    <option value="airport">Airport Terminal</option>
+                                    <option value="downtown">Downtown Office</option>
+                                    <option value="hotel">Hotel Delivery</option>
+                                </select>
+                            </div>
+                            <div class="search-group">
+                                <label>Pick Date</label>
+                                <input type="text" name="pickup-date" class="date-picker" placeholder="Select date" required>
+                            </div>
+                            <div class="search-group">
+                                <label>Pick Time</label>
+                                <select name="pickup-time" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">9:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="13:00">1:00 PM</option>
+                                    <option value="14:00">2:00 PM</option>
+                                    <option value="15:00">3:00 PM</option>
+                                    <option value="16:00">4:00 PM</option>
+                                    <option value="17:00">5:00 PM</option>
+                                    <option value="18:00">6:00 PM</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="search-btn">
+                                <i data-feather="search"></i>
+                                Search Cars
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Indicator -->
+            <div class="scroll-indicator">
+                <i data-feather="chevron-down"></i>
+                <span>Scroll to explore</span>
+            </div>
+        </section>
+
+        <!-- Featured Cars Section with Neon Glassmorphism -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Cars</h2>
+                    <p class="section-subtitle">Discover our premium collection of luxury vehicles, meticulously maintained and ready for your next adventure.</p>
+                </div>
+                <div class="featured-cars" id="featured-cars-grid">
+                    <!-- Cars will be loaded dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section with SVG Animation -->
+        <section class="why-choose-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Why Choose Vrooom?</h2>
+                    <p class="section-subtitle">Experience the difference with our exceptional service, premium vehicles, and customer-first approach.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-feather="shield"></i>
+                        </div>
+                        <h3 class="feature-title">Trusted & Safe</h3>
+                        <p class="feature-description">All our vehicles undergo rigorous safety checks and comprehensive maintenance protocols to ensure your peace of mind.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-feather="dollar-sign"></i>
+                        </div>
+                        <h3 class="feature-title">Best Prices</h3>
+                        <p class="feature-description">Competitive rates with transparent pricing - no hidden fees, no surprise charges, just honest value for exceptional service.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-feather="headphones"></i>
+                        </div>
+                        <h3 class="feature-title">24/7 Support</h3>
+                        <p class="feature-description">Round-the-clock customer support with real people ready to assist you wherever your journey takes you.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i data-feather="map-pin"></i>
+                        </div>
+                        <h3 class="feature-title">Multiple Locations</h3>
+                        <p class="feature-description">Convenient pickup and drop-off locations nationwide, making car rental effortless wherever you are.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section with 3D Flip Carousel -->
+        <section class="testimonials-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <p class="section-subtitle">Don't just take our word for it - hear from thousands of satisfied customers who've experienced the Vrooom difference.</p>
+                </div>
+                
+                <div class="testimonials-slider">
+                    <div class="testimonial active">
+                        <div class="testimonial-content">
+                            "Absolutely incredible service! The booking process was seamless, the car was pristine, and the customer support was outstanding. I'll definitely be using Vrooom for all my future car rental needs."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b302?w=100&h=100&fit=crop&crop=face" alt="Sarah Johnson" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <span>Business Executive</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            "The luxury vehicles and professional service exceeded all my expectations. From pickup to drop-off, everything was handled with precision and care. Highly recommended!"
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face" alt="Michael Chen" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <span>Tech Entrepreneur</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <div class="testimonial-content">
+                            "Perfect for my family vacation! The car was immaculate, spacious, and the staff went above and beyond to ensure we had everything we needed for our trip."
+                        </div>
+                        <div class="testimonial-author">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face" alt="Emily Rodriguez" class="author-avatar">
+                            <div class="author-info">
+                                <h4>Emily Rodriguez</h4>
+                                <span>Travel Blogger</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="slider-controls">
+                    <span class="slider-dot active" data-slide="0"></span>
+                    <span class="slider-dot" data-slide="1"></span>
+                    <span class="slider-dot" data-slide="2"></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vrooom</h3>
+                    <p>Experience luxury and comfort with our premium car rental service. Drive your dreams with unmatched quality and service.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i data-feather="facebook"></i></a>
+                        <a href="#" class="social-link"><i data-feather="twitter"></i></a>
+                        <a href="#" class="social-link"><i data-feather="instagram"></i></a>
+                        <a href="#" class="social-link"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="index.html">Home</a>
+                    <a href="listing.html">Cars</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="about.html">About</a>
+                    <a href="login.html">Account</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <a href="#">Premium Car Rental</a>
+                    <a href="#">Long Term Leasing</a>
+                    <a href="#">Corporate Solutions</a>
+                    <a href="#">Full Coverage Insurance</a>
+                    <a href="#">24/7 Support</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p><i data-feather="phone"></i> +1 (555) 123-4567</p>
+                    <p><i data-feather="mail"></i> info@vrooom.com</p>
+                    <p><i data-feather="map-pin"></i> 123 Car Street, Auto City, AC 12345</p>
+                    <p><i data-feather="clock"></i> 24/7 Customer Support</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vrooom. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Enhanced JavaScript Architecture -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/booking.js"></script>
+    <script>
+        feather.replace();
+        
+        // Initialize theme from localStorage
+        const theme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+        
+        // Add scroll effect to navbar
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Initialize intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'all 0.8s ease-out';
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>

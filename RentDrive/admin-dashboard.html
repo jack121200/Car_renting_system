@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Vrooom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">Vrooom Admin</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">View Site</a></li>
+                <li><button id="admin-logout-btn" class="btn-primary">Logout</button></li>
+                <li><button id="theme-toggle" class="theme-btn">
+                    <i data-feather="sun"></i>
+                </button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="admin-dashboard">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Admin Dashboard</h1>
+                <p>Manage cars, bookings, and system overview</p>
+            </div>
+
+            <div class="admin-content">
+                <!-- Admin Sidebar -->
+                <aside class="admin-sidebar glass">
+                    <nav class="admin-nav">
+                        <ul>
+                            <li>
+                                <button class="nav-btn active" data-tab="overview">
+                                    <i data-feather="bar-chart-2"></i>
+                                    Overview
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="cars">
+                                    <i data-feather="truck"></i>
+                                    Car Management
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="bookings">
+                                    <i data-feather="calendar"></i>
+                                    Bookings
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="users">
+                                    <i data-feather="users"></i>
+                                    Users
+                                </button>
+                            </li>
+                            <li>
+                                <button class="nav-btn" data-tab="settings">
+                                    <i data-feather="settings"></i>
+                                    Settings
+                                </button>
+                            </li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- Admin Main Content -->
+                <div class="admin-main">
+                    <!-- Overview Tab -->
+                    <div id="overview-tab" class="admin-tab active">
+                        <div class="tab-header">
+                            <h2>System Overview</h2>
+                            <div class="date-range">
+                                <input type="date" id="overview-start-date">
+                                <span>to</span>
+                                <input type="date" id="overview-end-date">
+                            </div>
+                        </div>
+
+                        <div class="stats-grid">
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="truck"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-cars">0</h3>
+                                    <p>Total Cars</p>
+                                    <span class="stat-change positive">+2 this month</span>
+                                </div>
+                            </div>
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="calendar-check"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-bookings-admin">0</h3>
+                                    <p>Total Bookings</p>
+                                    <span class="stat-change positive">+15% this week</span>
+                                </div>
+                            </div>
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="users"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-users">0</h3>
+                                    <p>Registered Users</p>
+                                    <span class="stat-change positive">+8% this month</span>
+                                </div>
+                            </div>
+                            <div class="stat-card glass">
+                                <div class="stat-icon">
+                                    <i data-feather="dollar-sign"></i>
+                                </div>
+                                <div class="stat-info">
+                                    <h3 id="total-revenue">$0</h3>
+                                    <p>Total Revenue</p>
+                                    <span class="stat-change positive">+22% this month</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="overview-charts">
+                            <div class="chart-card glass">
+                                <h3>Booking Trends</h3>
+                                <div class="chart-placeholder">
+                                    <p>Chart visualization would go here</p>
+                                    <small>Integration with Chart.js for production</small>
+                                </div>
+                            </div>
+                            <div class="chart-card glass">
+                                <h3>Popular Car Types</h3>
+                                <div class="chart-placeholder">
+                                    <p>Pie chart would go here</p>
+                                    <small>SUV: 35%, Sedan: 25%, Luxury: 20%, Sports: 20%</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cars Management Tab -->
+                    <div id="cars-tab" class="admin-tab">
+                        <div class="tab-header">
+                            <h2>Car Management</h2>
+                            <button class="btn-primary" id="add-car-btn">
+                                <i data-feather="plus"></i>
+                                Add New Car
+                            </button>
+                        </div>
+
+                        <div class="cars-management">
+                            <div class="search-filter-bar">
+                                <div class="search-input">
+                                    <i data-feather="search"></i>
+                                    <input type="text" placeholder="Search cars..." id="car-search">
+                                </div>
+                                <select id="car-type-filter">
+                                    <option value="">All Types</option>
+                                    <option value="sedan">Sedan</option>
+                                    <option value="suv">SUV</option>
+                                    <option value="hatchback">Hatchback</option>
+                                    <option value="luxury">Luxury</option>
+                                    <option value="sports">Sports</option>
+                                </select>
+                            </div>
+
+                            <div class="cars-table-container">
+                                <table class="admin-table" id="cars-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Car</th>
+                                            <th>Type</th>
+                                            <th>Price/Day</th>
+                                            <th>Status</th>
+                                            <th>Rating</th>
+                                            <th>Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="cars-table-body">
+                                        <!-- Cars will be loaded here -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bookings Tab -->
+                    <div id="bookings-tab" class="admin-tab">
+                        <div class="tab-header">
+                            <h2>Booking Management</h2>
+                            <div class="booking-filters">
+                                <select id="admin-booking-status-filter">
+                                    <option value="all">All Statuses</option>
+                                    <option value="active">Active</option>
+                                    <option value="completed">Completed</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                                <input type="date" id="booking-date-filter">
+                            </div>
+                        </div>
+
+                        <div class="bookings-table-container">
+                            <table class="admin-table" id="bookings-table">
+                                <thead>
+                                    <tr>
+                                        <th>Booking ID</th>
+                                        <th>Customer</th>
+                                        <th>Car</th>
+                                        <th>Dates</th>
+                                        <th>Amount</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="bookings-table-body">
+                                    <!-- Bookings will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Users Tab -->
+                    <div id="users-tab" class="admin-tab">
+                        <div class="tab-header">
+                            <h2>User Management</h2>
+                        </div>
+
+                        <div class="users-table-container">
+                            <table class="admin-table" id="users-table">
+                                <thead>
+                                    <tr>
+                                        <th>User</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Bookings</th>
+                                        <th>Total Spent</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="users-table-body">
+                                    <!-- Users will be loaded here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Settings Tab -->
+                    <div id="settings-tab" class="admin-tab">
+                        <div class="tab-header">
+                            <h2>System Settings</h2>
+                        </div>
+
+                        <div class="settings-content">
+                            <div class="settings-section glass">
+                                <h3>General Settings</h3>
+                                <div class="setting-item">
+                                    <label>Site Maintenance Mode</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="maintenance-mode">
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                                <div class="setting-item">
+                                    <label>Allow New Registrations</label>
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="allow-registrations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="settings-section glass">
+                                <h3>Booking Settings</h3>
+                                <div class="setting-item">
+                                    <label for="min-booking-hours">Minimum Booking Hours</label>
+                                    <input type="number" id="min-booking-hours" value="24" min="1">
+                                </div>
+                                <div class="setting-item">
+                                    <label for="max-advance-days">Maximum Advance Booking (Days)</label>
+                                    <input type="number" id="max-advance-days" value="365" min="1">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add/Edit Car Modal -->
+    <div id="car-modal" class="modal">
+        <div class="modal-content glass large-modal">
+            <div class="modal-header">
+                <h3 id="car-modal-title">Add New Car</h3>
+                <button class="close-modal" id="close-car-modal">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="car-form" class="admin-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="car-name">Car Name</label>
+                            <input type="text" id="car-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="car-brand">Brand</label>
+                            <input type="text" id="car-brand" name="brand" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="car-type-select">Type</label>
+                            <select id="car-type-select" name="type" required>
+                                <option value="">Select Type</option>
+                                <option value="sedan">Sedan</option>
+                                <option value="suv">SUV</option>
+                                <option value="hatchback">Hatchback</option>
+                                <option value="luxury">Luxury</option>
+                                <option value="sports">Sports</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="car-price">Price per Day ($)</label>
+                            <input type="number" id="car-price" name="price" required min="1">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="car-image">Image URL</label>
+                        <input type="url" id="car-image" name="image" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="car-description">Description</label>
+                        <textarea id="car-description" name="description" rows="4"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="car-seats">Seats</label>
+                            <input type="number" id="car-seats" name="seats" required min="2" max="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="car-transmission">Transmission</label>
+                            <select id="car-transmission" name="transmission" required>
+                                <option value="">Select Transmission</option>
+                                <option value="automatic">Automatic</option>
+                                <option value="manual">Manual</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Features</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="features" value="ac">
+                                <span class="checkmark"></span>
+                                Air Conditioning
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="features" value="gps">
+                                <span class="checkmark"></span>
+                                GPS Navigation
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="features" value="bluetooth">
+                                <span class="checkmark"></span>
+                                Bluetooth
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="features" value="usb">
+                                <span class="checkmark"></span>
+                                USB Ports
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" class="btn-secondary" id="cancel-car-form">Cancel</button>
+                        <button type="submit" class="btn-primary">Save Car</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="module" src="js/admin.js"></script>
+</body>
+</html>

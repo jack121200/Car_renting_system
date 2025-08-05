@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Vrooom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">Vrooom</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listing.html">Cars</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="login.html" class="btn-primary">Login</a></li>
+                <li><button id="theme-toggle" class="theme-btn">
+                    <i data-feather="sun"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-page">
+        <div class="container">
+            <div class="page-header">
+                <h1>Get in Touch</h1>
+                <p>We're here to help with any questions or concerns</p>
+            </div>
+
+            <div class="contact-content">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i data-feather="phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Phone Support</h3>
+                            <p>+1 (555) 123-4567</p>
+                            <small>Available 24/7</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i data-feather="mail"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Email Support</h3>
+                            <p>support@vrooom.com</p>
+                            <small>Response within 24 hours</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i data-feather="map-pin"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Visit Our Office</h3>
+                            <p>123 Main Street<br>Downtown, NY 10001</p>
+                            <small>Mon-Fri: 9AM-6PM</small>
+                        </div>
+                    </div>
+
+                    <div class="contact-card glass">
+                        <div class="contact-icon">
+                            <i data-feather="clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                               Saturday: 10:00 AM - 4:00 PM<br>
+                               Sunday: Closed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-section">
+                    <div class="contact-form-card glass">
+                        <h2>Send us a Message</h2>
+                        <p>Fill out the form below and we'll get back to you soon</p>
+
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name</label>
+                                    <div class="input-group">
+                                        <i data-feather="user"></i>
+                                        <input type="text" id="first-name" name="firstName" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name</label>
+                                    <div class="input-group">
+                                        <i data-feather="user"></i>
+                                        <input type="text" id="last-name" name="lastName" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <div class="input-group">
+                                        <i data-feather="mail"></i>
+                                        <input type="email" id="email" name="email" required>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <div class="input-group">
+                                        <i data-feather="phone"></i>
+                                        <input type="tel" id="phone" name="phone">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <div class="input-group">
+                                    <i data-feather="tag"></i>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="booking">Booking Support</option>
+                                        <option value="technical">Technical Issue</option>
+                                        <option value="feedback">Feedback</option>
+                                        <option value="complaint">Complaint</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <div class="input-group">
+                                    <i data-feather="message-square"></i>
+                                    <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <span class="checkmark"></span>
+                                    Subscribe to our newsletter for updates and special offers
+                                </label>
+                            </div>
+
+                            <button type="submit" class="contact-btn ripple-btn" id="submit-contact">
+                                <span>Send Message</span>
+                                <div class="loading-spinner" style="display: none;">
+                                    <div class="spinner"></div>
+                                </div>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <h2>Find Us</h2>
+                <div class="map-container glass">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3024.313091855988!2d-74.00597368400567!3d40.71272547932681!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a47df06b185%3A0xc889234bc07c42ee!2sNew%20York%2C%20NY%2010007%2C%20USA!5e0!3m2!1sen!2s!4v1643723234567!5m2!1sen!2s" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-container">
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>How can I modify my booking?</span>
+                            <i data-feather="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can modify your booking by logging into your account and accessing the "My Bookings" section. From there, you can change dates, times, or upgrade your vehicle (subject to availability).</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>What is your cancellation policy?</span>
+                            <i data-feather="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Free cancellation is available up to 24 hours before your pickup time. Cancellations within 24 hours may incur a small fee. Full refunds are processed within 3-5 business days.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>Do you offer 24/7 roadside assistance?</span>
+                            <i data-feather="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! All our rentals include complimentary 24/7 roadside assistance. Call our emergency hotline at +1 (555) 123-4567 if you need help during your rental period.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>What documents do I need to rent a car?</span>
+                            <i data-feather="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You'll need a valid driver's license, a major credit card in your name, and a government-issued photo ID. International customers may also need an International Driving Permit.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item glass">
+                        <button class="faq-question">
+                            <span>Can I add additional drivers to my rental?</span>
+                            <i data-feather="chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can add additional drivers during the booking process or at pickup. Additional drivers must meet the same requirements as the primary renter and may incur an additional daily fee.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vrooom</h3>
+                    <p>Premium car rental service with style and comfort.</p>
+                    <div class="social-links">
+                        <a href="#"><i data-feather="facebook"></i></a>
+                        <a href="#"><i data-feather="twitter"></i></a>
+                        <a href="#"><i data-feather="instagram"></i></a>
+                        <a href="#"><i data-feather="linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listing.html">Browse Cars</a></li>
+                        <li><a href="signup.html">Sign Up</a></li>
+                        <li><a href="login.html">Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i data-feather="phone"></i> +1 (555) 123-4567</p>
+                    <p><i data-feather="mail"></i> info@vrooom.com</p>
+                    <p><i data-feather="map-pin"></i> 123 Main St, Downtown, NY</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vrooom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="module" src="js/main.js"></script>
+    <script>
+        // Contact page specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            const submitBtn = document.getElementById('submit-contact');
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            // Contact form submission
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (validateContactForm()) {
+                    // Show loading state
+                    const spinner = submitBtn.querySelector('.loading-spinner');
+                    const span = submitBtn.querySelector('span');
+                    
+                    spinner.style.display = 'block';
+                    span.style.display = 'none';
+                    submitBtn.disabled = true;
+
+                    // Simulate form submission
+                    setTimeout(() => {
+                        showToast('Message sent successfully! We\'ll get back to you soon.', 'success');
+                        contactForm.reset();
+                        
+                        // Reset button state
+                        spinner.style.display = 'none';
+                        span.style.display = 'block';
+                        submitBtn.disabled = false;
+                    }, 2000);
+                }
+            });
+
+            // FAQ accordion functionality
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                const icon = question.querySelector('i');
+
+                question.addEventListener('click', () => {
+                    const isOpen = item.classList.contains('active');
+                    
+                    // Close all other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                            otherItem.querySelector('i').style.transform = 'rotate(0deg)';
+                        }
+                    });
+
+                    // Toggle current item
+                    if (!isOpen) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                        icon.style.transform = 'rotate(180deg)';
+                    } else {
+                        item.classList.remove('active');
+                        answer.style.maxHeight = null;
+                        icon.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+
+        function validateContactForm() {
+            const firstName = document.getElementById('first-name').value.trim();
+            const lastName = document.getElementById('last-name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!firstName) {
+                showToast('Please enter your first name', 'error');
+                return false;
+            }
+
+            if (!lastName) {
+                showToast('Please enter your last name', 'error');
+                return false;
+            }
+
+            if (!email || !isValidEmail(email)) {
+                showToast('Please enter a valid email address', 'error');
+                return false;
+            }
+
+            if (!subject) {
+                showToast('Please select a subject', 'error');
+                return false;
+            }
+
+            if (!message || message.length < 10) {
+                showToast('Please enter a message with at least 10 characters', 'error');
+                return false;
+            }
+
+            return true;
+        }
+
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast show ${type}`;
+            setTimeout(() => {
+                toast.className = 'toast';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Details - Vrooom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="index.html">Vrooom</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="listing.html">Cars</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="login.html" class="btn-primary">Login</a></li>
+                <li><button id="theme-toggle" class="theme-btn">
+                    <i data-feather="sun"></i>
+                </button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="details-page">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Home</a>
+                <i data-feather="chevron-right"></i>
+                <a href="listing.html">Cars</a>
+                <i data-feather="chevron-right"></i>
+                <span id="car-name-breadcrumb">Car Details</span>
+            </nav>
+
+            <div class="car-details-content" id="car-details-content">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Image Gallery Modal -->
+    <div id="gallery-modal" class="modal">
+        <div class="modal-content gallery-modal-content">
+            <button class="close-modal" id="close-gallery-modal">
+                <i data-feather="x"></i>
+            </button>
+            <div class="gallery-container">
+                <button class="gallery-nav prev" id="gallery-prev">
+                    <i data-feather="chevron-left"></i>
+                </button>
+                <img id="gallery-image" src="" alt="Car Gallery">
+                <button class="gallery-nav next" id="gallery-next">
+                    <i data-feather="chevron-right"></i>
+                </button>
+            </div>
+            <div class="gallery-thumbnails" id="gallery-thumbnails">
+                <!-- Thumbnails will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Booking Modal -->
+    <div id="booking-modal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3>Book Your Car</h3>
+                <button class="close-modal" id="close-booking-modal">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="booking-modal-body">
+                <!-- Booking form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="payment-modal" class="modal">
+        <div class="modal-content glass">
+            <div class="modal-header">
+                <h3>Payment</h3>
+                <button class="close-modal" id="close-payment-modal">
+                    <i data-feather="x"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="payment-modal-body">
+                <!-- Payment form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Vrooom</h3>
+                    <p>Premium car rental service with style and comfort.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="listing.html">Browse Cars</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Vrooom. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script type="module" src="js/details.js"></script>
+</body>
+</html>
